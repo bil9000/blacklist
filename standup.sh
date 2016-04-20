@@ -1,8 +1,9 @@
 #!/bin/bash
 sudo apt-get update
 sudo apt-get dist-upgrade -y
-sudo apt-get install debconf-utils -y
-sudo apt-get install zip -y
+sudo apt-get install debconf-utils git -y
+sudo apt-get install zip wamerican-small -y
+
 
 password4now="$(shuf -n1 /usr/share/dict/words)"
 echo "$password4now" 
@@ -31,7 +32,7 @@ sudo export DEBIAN_FRONTEND=noninteractive
 sudo apt-get install phpmyadmin -y -q
 
 
-mysql -uroot -p$password4now -ed "GRANT ALL PRIVILEGES ON wp.* To 'wp'@'localhost' IDENTIFIED BY 'wp_changemesoon';"
+mysql -uroot -p$password4now -ed "GRANT ALL PRIVILEGES ON wp.* To 'wp'@'localhost' IDENTIFIED BY '$password4now';"
 
 echo $password4now
 echo '<--- is the password, we'll also dump it to a local text file called `.yomamma`'
