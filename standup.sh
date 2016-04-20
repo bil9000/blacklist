@@ -35,5 +35,5 @@ sudo apt-get install phpmyadmin -y -q
 mysql -uroot -p$password4now -ed "GRANT ALL PRIVILEGES ON wp.* To 'wp'@'localhost' IDENTIFIED BY '$password4now';"
 
 echo $password4now
-echo '<--- is the password, we'll also dump it to a local text file called `.yomamma`'
-echo $password4now > .yomamma
+echo '<--- is the password, we'll also dump it to a local text file called **.yomamma**'
+echo $password4now >> .yomamma
